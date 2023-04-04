@@ -2,6 +2,7 @@ import pickle
 import bz2file as bz2
 import requests
 import streamlit as st
+import pandas as pd
 
 
 def fetch_poster(movie_id):
@@ -27,7 +28,7 @@ def recommend(movie):
     return recommended_movies, recommended_movies_posters
 
 
-movies = pickle.load(open('movies.pkl', 'rb'))
+movies = pd.read_pickle("movies.pkl")
 
 
 def decompress_pickle(file):
