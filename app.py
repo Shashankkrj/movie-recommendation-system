@@ -28,8 +28,7 @@ def recommend(movie):
     return recommended_movies, recommended_movies_posters
 
 
-with open("movies.pkl", "rb") as f:
-    movies = pd.read_pickle(f)
+movies = pd.read_pickle("movies.pkl")
 
 def decompress_pickle(file):
     data = bz2.BZ2File(file, "rb")
